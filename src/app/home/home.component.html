@@ -1,0 +1,15 @@
+<div>
+    <form [formGroup]="userinfoform" (ngSubmit)="ProceedSave()">
+     <div formArrayName="blogs">
+        <div *ngFor="let item of blogs.controls; let i=index" [formGroupName]="i">
+          <label>
+            First Name : <input type="text" formControlName="name">
+          </label>
+        </div>
+     </div>
+      <button class="button button2" type="submit" [disabled]="!userinfoform.valid">Submit</button>
+    </form>
+    <button class="button button4" type="submit" (click)="Addnewrow()">Reset</button>
+  
+  </div>
+  
